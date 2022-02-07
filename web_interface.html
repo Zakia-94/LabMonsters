@@ -1,0 +1,25 @@
+{% block title %}Setting Raspberry's WIFI{% endblock %}
+</head>
+<body>
+<h1>WIFI configuration</h1>
+<form action="{{ url_for('wifi_config')}}"method="post" class="form-inline"> 
+<div class="form-group">
+<label for="WIFILIST">SSID   </label>
+<select class="form-control" name="WIFILIST">
+  {% for list in final_scanned_networks %}
+    <option value= "{{list}}" SELECTED>{{list}}</option>"
+  {% endfor %} 
+ </select>
+</div>
+<br>
+PASSEWORD <input type="password" name="psw" />
+<br>
+<br>
+<br>
+</div>
+ <input type="submit">
+</form>
+
+{{msg_to_display}}
+<br>
+</body></html>
